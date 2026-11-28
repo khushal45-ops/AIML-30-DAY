@@ -1,32 +1,23 @@
-# 30-Day AIML Engineering Practice
+# 30-Day ML Engineering Practice
 
-Ek 30-din ka project jisme main data cleaning, model training, aur API deployment step by step seekh raha/rahi hoon.
+A 30-day practice project where I learn data cleaning, model training, and deployment step by step. This README covers only the work that is done.
 
-## Project mein kya hai
-- `day01/` se `day30/` tak roz ka kaam
-- `src/`: final code (notebook se nikal ke `.py` files mein)
-- `api/`: FastAPI app aur Dockerfile
+## Current status
+Day 1 of 30 complete.
 
-## Kaise chalaye
-```bash
-pip install -r requirements.txt
-python src/train.py
-uvicorn api.main:app --reload
-```
+## Structure
+- `Day01/`: Day 1 notebook (pandas on Titanic, Python test)
 
-## Dataset
-[Dataset ka naam, source, aur kitne rows/columns]
+## Day 1: Pandas on Titanic
+**Dataset:** Titanic passenger data, loaded with seaborn (`sns.load_dataset("titanic")`). 891 rows, 15 columns.
 
-## Model aur results
-- Model: [jo use kiya]
-- Metric: [accuracy/F1/RMSE, kuch bhi jo problem ke hisaab se ho]
-- Result: [actual number, jo tune run karke dekha]
-- Limitations: [model kahan galat hota hai]
+- Checked missing values: `age` 177 (20%), `deck` 688 (77%), `embarked` and `embark_town` 2 each.
+- Filled missing `age` with the median of each passenger class, because 1st class passengers were older on average.
+- Decided to drop `deck` for modeling: 77% missing and strongly linked to passenger class.
+- Python exercise: function to average marks. Empty list and missing marks both return `None`, so they are not mistaken for a real score.
 
 ## Day log
-| Day | Kya kiya | Kya seekha |
-|-----|----------|------------|
-| 1   |          |            |
 
-## Mujhe kya aata hai ab
-[30 din ke baad, actual skills likhna]
+| Day | What I did | What I learned |
+|-----|------------|----------------|
+| 1 | Pandas EDA on Titanic: missing values, class-wise median fill, groupby analysis. Python edge-case function. | Missing data needs a pattern check, not just a count. |
